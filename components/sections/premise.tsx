@@ -65,7 +65,7 @@ export default function Premise() {
                 </div>
                 <p
                   className="mt-4"
-                  style={{ color: "var(--fg)", opacity: 0.82, lineHeight: 1.65 }}
+                  style={{ color: "var(--fg)", opacity: 0.7, lineHeight: 1.7 }}
                 >
                   {p.body}
                 </p>

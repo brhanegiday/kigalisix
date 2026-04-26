@@ -63,7 +63,7 @@ export default function Practice() {
                 </h3>
               </div>
               <div className="lg:col-span-4">
-                <p style={{ color: "var(--fg)", opacity: 0.78, lineHeight: 1.65 }}>
+                <p style={{ color: "var(--fg)", opacity: 0.7, lineHeight: 1.7 }}>
                   {p.body}
                 </p>
               </div>

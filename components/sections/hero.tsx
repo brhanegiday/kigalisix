@@ -2,8 +2,26 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section id="top" className="pt-36 pb-24 lg:pt-44 lg:pb-32 px-6 lg:px-12">
-      <div className="max-w-[1400px] mx-auto">
+    <section
+      id="top"
+      className="relative pt-36 pb-24 lg:pt-44 lg:pb-32 px-6 lg:px-12 overflow-hidden"
+    >
+      {/* Radial glow — accent haze in top-left quadrant */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          top: "-15%",
+          left: "-8%",
+          width: "65%",
+          height: "90%",
+          background:
+            "radial-gradient(ellipse at top left, var(--accent-glow) 0%, transparent 65%)",
+          pointerEvents: "none",
+        }}
+      />
+
+      <div className="relative max-w-[1400px] mx-auto">
         <div
           className="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono ks-reveal"
           style={{
@@ -47,9 +65,9 @@ export default function Hero() {
               className="ks-reveal"
               style={{
                 color: "var(--fg)",
-                opacity: 0.85,
+                opacity: 0.72,
                 fontSize: "1.125rem",
-                lineHeight: 1.65,
+                lineHeight: 1.7,
                 animationDelay: "240ms",
               }}
             >

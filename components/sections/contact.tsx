@@ -4,11 +4,25 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="px-6 lg:px-12 py-24 lg:py-40 border-t"
+      className="relative px-6 lg:px-12 py-24 lg:py-40 border-t overflow-hidden"
       style={{ borderColor: "var(--hair)" }}
     >
-      <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
+      {/* Accent glow anchored to the bottom-right */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          bottom: "-10%",
+          right: "-5%",
+          width: "55%",
+          height: "80%",
+          background:
+            "radial-gradient(ellipse at bottom right, var(--accent-glow) 0%, transparent 65%)",
+          pointerEvents: "none",
+        }}
+      />
 
+      <div className="relative max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
         <div className="lg:col-span-3">
           <SectionLabel index="04" label="Contact" />
         </div>
@@ -69,7 +83,10 @@ export default function Contact() {
               >
                 Find us
               </div>
-              <p className="font-display mt-3" style={{ color: "var(--fg)", fontSize: "1.5rem" }}>
+              <p
+                className="font-display mt-3"
+                style={{ color: "var(--fg)", fontSize: "1.5rem" }}
+              >
                 Kigali, RW
               </p>
             </div>
@@ -89,7 +106,12 @@ export default function Contact() {
               </div>
               <p
                 className="mt-3"
-                style={{ color: "var(--fg)", opacity: 0.7, fontSize: "14px", lineHeight: 1.6 }}
+                style={{
+                  color: "var(--fg)",
+                  opacity: 0.65,
+                  fontSize: "14px",
+                  lineHeight: 1.7,
+                }}
               >
                 Send the shape of the problem. We&apos;ll respond with the
                 shape of an answer.
@@ -97,7 +119,6 @@ export default function Contact() {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );

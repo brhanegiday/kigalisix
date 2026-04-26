@@ -1,29 +1,33 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #f1e8d9;
-  --fg: #17130e;
-  --muted: #756a5e;
-  --accent: #a94732;
-  --hair: #d7c9b6;
-  --surface: #f7efe4;
-  --surface-hover: #efe1cf;
-  --header-bg: rgba(241, 232, 217, 0.82);
-  --grain-opacity: 0.16;
+  --bg: #fafafa;
+  --fg: #09090b;
+  --muted: #71717a;
+  --accent: #dc4b2e;
+  --hair: rgba(0, 0, 0, 0.08);
+  --surface: rgba(0, 0, 0, 0.025);
+  --surface-hover: rgba(0, 0, 0, 0.052);
+  --header-bg: rgba(250, 250, 250, 0.88);
+  --accent-glow: rgba(220, 75, 46, 0.07);
+  --accent-dim: rgba(220, 75, 46, 0.18);
+  --grain-opacity: 0.055;
   --grain-blend: multiply;
   color-scheme: light;
 }
 
 [data-theme="dark"] {
-  --bg: #14130f;
-  --fg: #efeae0;
-  --muted: #8c8478;
-  --accent: #c8553d;
-  --hair: #2a2722;
-  --surface: #14130f;
-  --surface-hover: #18170f;
-  --header-bg: rgba(20, 19, 15, 0.78);
-  --grain-opacity: 0.07;
+  --bg: #09090b;
+  --fg: #fafafa;
+  --muted: #71717a;
+  --accent: #e8563c;
+  --hair: rgba(255, 255, 255, 0.075);
+  --surface: rgba(255, 255, 255, 0.04);
+  --surface-hover: rgba(255, 255, 255, 0.075);
+  --header-bg: rgba(9, 9, 11, 0.88);
+  --accent-glow: rgba(232, 86, 60, 0.14);
+  --accent-dim: rgba(232, 86, 60, 0.22);
+  --grain-opacity: 0.035;
   --grain-blend: overlay;
   color-scheme: dark;
 }
@@ -32,12 +36,10 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Offset scroll targets so the fixed header doesn't obscure them */
 section[id] {
   scroll-margin-top: 80px;
 }
 
-/* Global focus ring — terracotta, 2px, offset */
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
@@ -53,23 +55,26 @@ section[id] {
 }
 
 @keyframes ksFadeUp {
-  from { opacity: 0; transform: translateY(14px); }
+  from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
 .ks-reveal {
-  animation: ksFadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation: ksFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-/* CTA button: inverts on hover */
+/* CTA button — glass style, inverts on hover */
 .ks-cta {
   color: var(--fg);
-  border: 1px solid var(--fg);
-  background: transparent;
-  transition: background 0.3s ease, color 0.3s ease;
+  border: 1px solid var(--hair);
+  background: var(--surface);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 .ks-cta:hover {
   background: var(--fg);
+  border-color: var(--fg);
   color: var(--bg);
 }
 
@@ -87,12 +92,8 @@ section[id] {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  .ks-marquee-track {
-    animation-play-state: paused;
-  }
+  html { scroll-behavior: auto; }
+  .ks-marquee-track { animation-play-state: paused; }
 }
 
 /* Member card */
@@ -100,25 +101,28 @@ section[id] {
   background: var(--surface);
   text-decoration: none;
   color: inherit;
-  transition: background 0.5s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
-.ks-member:hover { background: var(--surface-hover); }
-/* Inset ring so it stays within the grid cell boundary */
+.ks-member:hover {
+  background: var(--surface-hover);
+  box-shadow: inset 0 0 0 1px var(--accent-dim);
+}
 .ks-member:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: -2px;
 }
 
+/* Animated accent rule inside member cards */
 .ks-rule {
   height: 1px;
   width: 32px;
   background: var(--accent);
-  transition: width 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .ks-member:hover .ks-rule { width: 100%; }
 
 /* Practice row hover-shift */
 .ks-practice {
-  transition: padding-left 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: padding-left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .ks-practice:hover { padding-left: 1.5rem; }

@@ -50,17 +50,15 @@ export default function ThemeToggle() {
       type="button"
       aria-label={`Switch to ${nextTheme} mode`}
       title={`Switch to ${nextTheme} mode`}
-      onClick={() => {
-        applyTheme(nextTheme);
-      }}
-      className="inline-flex size-9 items-center justify-center border transition-colors hover:opacity-75"
+      onClick={() => applyTheme(nextTheme)}
+      className="inline-flex size-8 items-center justify-center rounded-full transition-colors"
       style={{
-        borderColor: "var(--hair)",
-        color: "var(--fg)",
+        border: "1px solid var(--hair)",
+        color: "var(--muted)",
         background: "var(--surface)",
       }}
     >
-      <Icon size={15} strokeWidth={1.8} aria-hidden="true" />
+      <Icon size={14} strokeWidth={1.75} aria-hidden="true" />
     </button>
   );
 }

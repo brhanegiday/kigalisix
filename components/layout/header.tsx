@@ -3,7 +3,7 @@ import ThemeToggle from "@/components/ui/theme-toggle";
 export default function Header() {
   return (
     <header
-      className="fixed top-0 inset-x-0 z-50 backdrop-blur-md"
+      className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl"
       style={{
         background: "var(--header-bg)",
         borderBottom: "1px solid var(--hair)",
@@ -20,7 +20,8 @@ export default function Header() {
             Six
           </span>
         </a>
-        <div className="flex items-center gap-4 md:gap-7">
+
+        <div className="flex items-center gap-4 md:gap-8">
           <nav
             className="hidden md:flex items-center gap-7 font-mono"
             style={{
@@ -30,25 +31,16 @@ export default function Header() {
               letterSpacing: "0.18em",
             }}
           >
-            <a
-              href="#premise"
-              className="transition-opacity hover:opacity-60"
-            >
+            <a href="#premise" className="transition-opacity hover:opacity-60">
               Premise
             </a>
             <a href="#team" className="transition-opacity hover:opacity-60">
               The Six
             </a>
-            <a
-              href="#practice"
-              className="transition-opacity hover:opacity-60"
-            >
+            <a href="#practice" className="transition-opacity hover:opacity-60">
               Practice
             </a>
-            <a
-              href="#contact"
-              className="transition-opacity hover:opacity-60"
-            >
+            <a href="#contact" className="transition-opacity hover:opacity-60">
               Contact
             </a>
           </nav>

@@ -29,7 +29,7 @@ export default function TheSix() {
             </h2>
             <p
               className="mt-6 max-w-2xl"
-              style={{ color: "var(--fg)", opacity: 0.7, lineHeight: 1.65 }}
+              style={{ color: "var(--fg)", opacity: 0.65, lineHeight: 1.7 }}
             >
               Each of us has our own work. The Six is what we share &mdash; and
               where we collaborate when the project asks for more than one head.
@@ -37,6 +37,7 @@ export default function TheSix() {
           </div>
         </div>
 
+        {/* Grid with hairline gaps: parent bg acts as the separator color */}
         <div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
           style={{ background: "var(--hair)", gap: "1px" }}
