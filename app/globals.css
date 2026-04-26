@@ -1,26 +1,99 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg:     #14130F;
+  --fg:     #EFEAE0;
+  --muted:  #8C8478;
+  --accent: #C8553D;
+  --hair:   #2A2722;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Offset scroll targets so the fixed header doesn't obscure them */
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+/* Global focus ring — terracotta, 2px, offset */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.font-display { font-family: var(--font-display), serif; }
+.font-body    { font-family: var(--font-body), system-ui, sans-serif; }
+.font-mono    { font-family: var(--font-mono), monospace; }
+
+@keyframes ksFadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.ks-reveal {
+  animation: ksFadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+/* CTA button: inverts on hover */
+.ks-cta {
+  color: var(--fg);
+  border: 1px solid var(--fg);
+  background: transparent;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.ks-cta:hover {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+/* Marquee */
+.ks-marquee-track {
+  display: flex;
+  gap: 3rem;
+  animation: ksMarquee 80s linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes ksMarquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .ks-marquee-track {
+    animation-play-state: paused;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Member card */
+.ks-member {
+  background: var(--bg);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.5s ease;
 }
+.ks-member:hover { background: #18170F; }
+/* Inset ring so it stays within the grid cell boundary */
+.ks-member:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+.ks-rule {
+  height: 1px;
+  width: 32px;
+  background: var(--accent);
+  transition: width 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.ks-member:hover .ks-rule { width: 100%; }
+
+/* Practice row hover-shift */
+.ks-practice {
+  transition: padding-left 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.ks-practice:hover { padding-left: 1.5rem; }
