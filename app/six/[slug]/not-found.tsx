@@ -36,7 +36,7 @@ export default function NotFound() {
             letterSpacing: "0.18em",
           }}
         >
-          ← Back to the Six
+          &larr; Back to the Six
         </Link>
       </div>
     </main>

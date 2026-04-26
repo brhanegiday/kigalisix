@@ -4,12 +4,12 @@ const pillars = [
   {
     roman: "i.",
     title: "Builders",
-    body: "Six people who actually ship. Software, AI, cloud, data, product, design — covered end to end.",
+    body: "Six people who actually ship. Software, AI, cloud, data, product, design - covered end to end.",
   },
   {
     roman: "ii.",
     title: "Grounded",
-    body: "We work on problems we recognize — labor markets, language, identity, public infrastructure — not borrowed playbooks.",
+    body: "We work on problems we recognize - labor markets, language, identity, public infrastructure - not borrowed playbooks.",
   },
   {
     roman: "iii.",
@@ -26,7 +26,6 @@ export default function Premise() {
       style={{ borderColor: "var(--hair)" }}
     >
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
-
         <div className="lg:col-span-3">
           <SectionLabel index="01" label="Premise" />
         </div>
@@ -44,8 +43,8 @@ export default function Premise() {
             We met in Kigali, at{" "}
             <span style={{ fontStyle: "italic" }}>CMU-Africa</span>. We stayed
             because we share a working hypothesis: the next decade of African
-            technology will be built by teams who know the continent
-            first-hand — and we plan to be one of them.
+            technology will be built by teams who know the continent first-hand
+            &mdash; and we plan to be one of them.
           </p>
 
           <div className="mt-16 lg:mt-20 grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12">
@@ -74,7 +73,6 @@ export default function Premise() {
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );

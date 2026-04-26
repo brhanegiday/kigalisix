@@ -4,8 +4,6 @@ export default function Hero() {
   return (
     <section id="top" className="pt-36 pb-24 lg:pt-44 lg:pb-32 px-6 lg:px-12">
       <div className="max-w-[1400px] mx-auto">
-
-        {/* Eyebrow strip */}
         <div
           className="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono ks-reveal"
           style={{
@@ -16,15 +14,14 @@ export default function Hero() {
             animationDelay: "0ms",
           }}
         >
-          <span style={{ color: "var(--accent)" }}>●</span>
+          <span style={{ color: "var(--accent)" }}>&bull;</span>
           <span>Kigali Six</span>
-          <span style={{ opacity: 0.4 }}>—</span>
+          <span style={{ opacity: 0.4 }}>&mdash;</span>
           <span>Est. MMXXVI</span>
-          <span style={{ opacity: 0.4 }}>—</span>
+          <span style={{ opacity: 0.4 }}>&mdash;</span>
           <span>CMU-Africa</span>
         </div>
 
-        {/* Display headline */}
         <h1
           className="font-display ks-reveal mt-10"
           style={{
@@ -44,7 +41,6 @@ export default function Hero() {
           </span>
         </h1>
 
-        {/* Right-aligned subhead + CTA */}
         <div className="mt-14 lg:mt-20 grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
           <div className="lg:col-span-7 lg:col-start-6">
             <p
@@ -58,8 +54,9 @@ export default function Hero() {
               }}
             >
               A collective of engineers, researchers, and product designers from
-              Carnegie Mellon University Africa — working at the intersection of
-              AI, infrastructure, and the problems we know first-hand.
+              Carnegie Mellon University Africa &mdash; working at the
+              intersection of AI, infrastructure, and the problems we know
+              first-hand.
             </p>
 
             <div
@@ -89,12 +86,11 @@ export default function Hero() {
                   letterSpacing: "0.18em",
                 }}
               >
-                Or skip to the brief →
+                Or skip to the brief &rarr;
               </a>
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );

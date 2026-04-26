@@ -6,7 +6,7 @@ import Footer from "@/components/layout/footer";
 import "./globals.css";
 
 const description =
-  "A collective of engineers, researchers, and product designers from Carnegie Mellon University Africa — working at the intersection of AI, infrastructure, and the problems we know first-hand.";
+  "A collective of engineers, researchers, and product designers from Carnegie Mellon University Africa - working at the intersection of AI, infrastructure, and the problems we know first-hand.";
 
 // TODO: replace with the real Vercel domain once deployed
 const siteUrl = "https://kigalisix.co";
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: "Kigali Six",
-    template: "%s — Kigali Six",
+    template: "%s - Kigali Six",
   },
   description,
   openGraph: {
@@ -43,8 +43,18 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-theme="light"
+      suppressHydrationWarning
       className={`${display.variable} ${body.variable} ${mono.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              'try{var t=localStorage.getItem("kigali-six-theme");if(t==="dark"||t==="light"){document.documentElement.dataset.theme=t}}catch(e){}',
+          }}
+        />
+      </head>
       <body
         className="font-body min-h-full flex flex-col"
         style={{ background: "var(--bg)", color: "var(--fg)" }}

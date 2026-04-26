@@ -18,7 +18,6 @@ export default function OgImage() {
           padding: "80px 96px",
         }}
       >
-        {/* Top eyebrow */}
         <div
           style={{
             display: "flex",
@@ -31,11 +30,10 @@ export default function OgImage() {
             textTransform: "uppercase",
           }}
         >
-          <span style={{ color: "#C8553D" }}>●</span>
-          <span>CMU-Africa · MMXXVI · Kigali</span>
+          <span style={{ color: "#C8553D" }}>{"\u2022"}</span>
+          <span>{"CMU-Africa \u00b7 MMXXVI \u00b7 Kigali"}</span>
         </div>
 
-        {/* Wordmark */}
         <div
           style={{
             fontSize: "144px",
@@ -50,7 +48,6 @@ export default function OgImage() {
           <span style={{ fontStyle: "italic", color: "#C8553D" }}>Six</span>
         </div>
 
-        {/* Bottom tagline */}
         <div
           style={{
             color: "#8C8478",
@@ -60,7 +57,7 @@ export default function OgImage() {
             textTransform: "uppercase",
           }}
         >
-          Engineers · Researchers · Builders · Kigali
+          {"Engineers \u00b7 Researchers \u00b7 Builders \u00b7 Kigali"}
         </div>
       </div>
     ),

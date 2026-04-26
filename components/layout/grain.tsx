@@ -2,12 +2,11 @@ export default function Grain() {
   return (
     <div
       aria-hidden="true"
+      className="ks-grain"
       style={{
         position: "fixed",
         inset: 0,
         pointerEvents: "none",
-        opacity: 0.07,
-        mixBlendMode: "overlay",
         zIndex: 100,
       }}
     >

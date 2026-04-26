@@ -1,12 +1,11 @@
 const items = [
-  "Kigali — Rwanda",
+  "Kigali - Rwanda",
   "CMU-Africa, MMXXVI",
   "Six builders, one collective",
-  "Software · AI · Cloud · Product · Research · Design",
+  "Software \u00b7 AI \u00b7 Cloud \u00b7 Product \u00b7 Research \u00b7 Design",
   "Currently accepting briefs",
 ];
 
-// 4× repetition; animation scrolls to −50% for a seamless loop
 const track = [...items, ...items, ...items, ...items];
 
 export default function Marquee() {
@@ -26,7 +25,7 @@ export default function Marquee() {
       >
         {track.map((item, i) => (
           <span key={i} className="flex items-center gap-12">
-            <span style={{ color: "var(--accent)" }}>✦</span>
+            <span style={{ color: "var(--accent)" }}>&#10022;</span>
             <span>{item}</span>
           </span>
         ))}

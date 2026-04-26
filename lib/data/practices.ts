@@ -8,7 +8,7 @@ export const practices: Practice[] = [
   {
     index: "01",
     title: "Applied AI & Research",
-    body: "From LLM evaluation to deployed generative systems, we work on AI that has to live in the real world — and survive it.",
+    body: "From LLM evaluation to deployed generative systems, we work on AI that has to live in the real world - and survive it.",
   },
   {
     index: "02",

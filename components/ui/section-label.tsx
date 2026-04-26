@@ -11,7 +11,7 @@ export default function SectionLabel({ index, label }: Props) {
         letterSpacing: "0.22em",
       }}
     >
-      {index} — {label}
+      {index} &mdash; {label}
     </div>
   );
 }

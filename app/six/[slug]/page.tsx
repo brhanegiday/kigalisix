@@ -17,11 +17,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: member.name,
     description: member.bioShort,
     openGraph: {
-      title: `${member.name} — Kigali Six`,
+      title: `${member.name} - Kigali Six`,
       description: member.bioShort,
     },
     twitter: {
-      title: `${member.name} — Kigali Six`,
+      title: `${member.name} - Kigali Six`,
       description: member.bioShort,
     },
   };
@@ -41,8 +41,6 @@ export default async function MemberPage({ params }: PageProps) {
   return (
     <main className="grow pt-[72px]">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-
-        {/* Back link */}
         <div className="py-6 border-b" style={{ borderColor: "var(--hair)" }}>
           <Link
             href="/#team"
@@ -54,13 +52,12 @@ export default async function MemberPage({ params }: PageProps) {
               letterSpacing: "0.18em",
             }}
           >
-            ← The Six
+            &larr; The Six
           </Link>
         </div>
 
-        {/* Member header */}
         <div className="pt-16 lg:pt-24 pb-0">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-6">
             <span
               className="font-mono"
               style={{
@@ -72,7 +69,7 @@ export default async function MemberPage({ params }: PageProps) {
               {member.index}
             </span>
             <span
-              className="font-mono"
+              className="font-mono text-right"
               style={{
                 color: "var(--muted)",
                 fontSize: "10px",
@@ -105,7 +102,7 @@ export default async function MemberPage({ params }: PageProps) {
               letterSpacing: "0.16em",
             }}
           >
-            {member.tags.join(" · ")}
+            {member.tags.join(" \u00b7 ")}
           </div>
 
           <div
@@ -114,7 +111,6 @@ export default async function MemberPage({ params }: PageProps) {
           />
         </div>
 
-        {/* Bio */}
         <div className="mt-12 lg:mt-16 pb-16 lg:pb-24 max-w-2xl">
           {member.bioLong.split("\n\n").map((para, i) => (
             <p
@@ -131,7 +127,6 @@ export default async function MemberPage({ params }: PageProps) {
             </p>
           ))}
 
-          {/* Links */}
           {hasLinks && (
             <div className="mt-14 lg:mt-16">
               <div
@@ -214,7 +209,6 @@ export default async function MemberPage({ params }: PageProps) {
           )}
         </div>
 
-        {/* Next member */}
         <div
           className="border-t py-8 flex items-center justify-between"
           style={{ borderColor: "var(--hair)" }}
@@ -230,12 +224,11 @@ export default async function MemberPage({ params }: PageProps) {
             }}
           >
             <span>{nextMember.index}</span>
-            <span style={{ opacity: 0.4 }}>—</span>
+            <span style={{ opacity: 0.4 }}>&mdash;</span>
             <span>{nextMember.name}</span>
-            <span>→</span>
+            <span>&rarr;</span>
           </Link>
         </div>
-
       </div>
     </main>
   );

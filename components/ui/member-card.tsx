@@ -7,7 +7,7 @@ export default function MemberCard({ member }: { member: Member }) {
       href={`/six/${member.slug}`}
       className="ks-member block relative p-8 lg:p-10"
     >
-      <div className="flex items-start justify-between mb-10">
+      <div className="flex items-start justify-between mb-10 gap-6">
         <div
           className="font-mono"
           style={{ color: "var(--accent)", fontSize: "11px", letterSpacing: "0.18em" }}
@@ -48,7 +48,7 @@ export default function MemberCard({ member }: { member: Member }) {
           letterSpacing: "0.16em",
         }}
       >
-        {member.tags.join(" · ")}
+        {member.tags.join(" \u00b7 ")}
       </div>
 
       <p

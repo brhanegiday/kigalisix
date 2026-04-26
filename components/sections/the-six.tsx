@@ -10,7 +10,6 @@ export default function TheSix() {
       style={{ borderColor: "var(--hair)" }}
     >
       <div className="max-w-[1400px] mx-auto">
-
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 lg:mb-20">
           <div className="lg:col-span-3">
             <SectionLabel index="02" label="The Six" />
@@ -32,13 +31,12 @@ export default function TheSix() {
               className="mt-6 max-w-2xl"
               style={{ color: "var(--fg)", opacity: 0.7, lineHeight: 1.65 }}
             >
-              Each of us has our own work. The Six is what we share — and where
-              we collaborate when the project asks for more than one head.
+              Each of us has our own work. The Six is what we share &mdash; and
+              where we collaborate when the project asks for more than one head.
             </p>
           </div>
         </div>
 
-        {/* 1px hairline grid: parent bg = var(--hair), gap = 1px, cards bg = var(--bg) */}
         <div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
           style={{ background: "var(--hair)", gap: "1px" }}
@@ -47,7 +45,6 @@ export default function TheSix() {
             <MemberCard key={m.slug} member={m} />
           ))}
         </div>
-
       </div>
     </section>
   );

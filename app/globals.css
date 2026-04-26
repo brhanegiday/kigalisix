@@ -1,11 +1,31 @@
 @import "tailwindcss";
 
 :root {
-  --bg:     #14130F;
-  --fg:     #EFEAE0;
-  --muted:  #8C8478;
-  --accent: #C8553D;
-  --hair:   #2A2722;
+  --bg: #f1e8d9;
+  --fg: #17130e;
+  --muted: #756a5e;
+  --accent: #a94732;
+  --hair: #d7c9b6;
+  --surface: #f7efe4;
+  --surface-hover: #efe1cf;
+  --header-bg: rgba(241, 232, 217, 0.82);
+  --grain-opacity: 0.16;
+  --grain-blend: multiply;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --bg: #14130f;
+  --fg: #efeae0;
+  --muted: #8c8478;
+  --accent: #c8553d;
+  --hair: #2a2722;
+  --surface: #14130f;
+  --surface-hover: #18170f;
+  --header-bg: rgba(20, 19, 15, 0.78);
+  --grain-opacity: 0.07;
+  --grain-blend: overlay;
+  color-scheme: dark;
 }
 
 html {
@@ -26,6 +46,11 @@ section[id] {
 .font-display { font-family: var(--font-display), serif; }
 .font-body    { font-family: var(--font-body), system-ui, sans-serif; }
 .font-mono    { font-family: var(--font-mono), monospace; }
+
+.ks-grain {
+  opacity: var(--grain-opacity);
+  mix-blend-mode: var(--grain-blend);
+}
 
 @keyframes ksFadeUp {
   from { opacity: 0; transform: translateY(14px); }
@@ -72,12 +97,12 @@ section[id] {
 
 /* Member card */
 .ks-member {
-  background: var(--bg);
+  background: var(--surface);
   text-decoration: none;
   color: inherit;
   transition: background 0.5s ease;
 }
-.ks-member:hover { background: #18170F; }
+.ks-member:hover { background: var(--surface-hover); }
 /* Inset ring so it stays within the grid cell boundary */
 .ks-member:focus-visible {
   outline: 2px solid var(--accent);

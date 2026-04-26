@@ -13,21 +13,21 @@ export default function Footer() {
           letterSpacing: "0.18em",
         }}
       >
-        <div>© Kigali Six — MMXXVI</div>
+        <div>&copy; Kigali Six &mdash; MMXXVI</div>
         <div className="flex flex-wrap gap-x-6 gap-y-2">
           <span>Brhane</span>
-          <span style={{ opacity: 0.4 }}>·</span>
+          <span style={{ opacity: 0.4 }}>&middot;</span>
           <span>Julius</span>
-          <span style={{ opacity: 0.4 }}>·</span>
+          <span style={{ opacity: 0.4 }}>&middot;</span>
           <span>Wendy</span>
-          <span style={{ opacity: 0.4 }}>·</span>
+          <span style={{ opacity: 0.4 }}>&middot;</span>
           <span>Roy</span>
-          <span style={{ opacity: 0.4 }}>·</span>
+          <span style={{ opacity: 0.4 }}>&middot;</span>
           <span>Michael</span>
-          <span style={{ opacity: 0.4 }}>·</span>
+          <span style={{ opacity: 0.4 }}>&middot;</span>
           <span>Godbright</span>
         </div>
-        <div>Made in Kigali · Rwanda</div>
+        <div>Made in Kigali &middot; Rwanda</div>
       </div>
     </footer>
   );
