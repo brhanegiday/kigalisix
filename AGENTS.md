@@ -81,11 +81,11 @@ These are the canonical values. They live in `app/globals.css` as CSS custom pro
 
 ```css
 :root {
-  --bg:     #14130F;   /* deep warm ink */
-  --fg:     #EFEAE0;   /* warm parchment */
-  --muted:  #8C8478;   /* secondary text */
-  --accent: #C8553D;   /* terracotta — use sparingly */
-  --hair:   #2A2722;   /* hairlines, dividers, card grids */
+    --bg: #14130f; /* deep warm ink */
+    --fg: #efeae0; /* warm parchment */
+    --muted: #8c8478; /* secondary text */
+    --accent: #c8553d; /* terracotta — use sparingly */
+    --hair: #2a2722; /* hairlines, dividers, card grids */
 }
 ```
 
@@ -95,11 +95,11 @@ The palette is warm and dark. Pure black (`#000`) and pure white (`#fff`) are fo
 
 Three families, loaded via `next/font/google` and exposed as CSS variables:
 
-| Role     | Family             | Weight   | Use                                                |
-| -------- | ------------------ | -------- | -------------------------------------------------- |
-| Display  | Instrument Serif   | 400 + italic | All headings, hero, member names, big numerics |
-| Body     | Geist              | 300/400/500/600 | Paragraphs, UI text                          |
-| Mono     | JetBrains Mono     | 400/500  | Eyebrows, section indices, labels, micro-text      |
+| Role    | Family           | Weight          | Use                                            |
+| ------- | ---------------- | --------------- | ---------------------------------------------- |
+| Display | Instrument Serif | 400 + italic    | All headings, hero, member names, big numerics |
+| Body    | Geist            | 300/400/500/600 | Paragraphs, UI text                            |
+| Mono    | JetBrains Mono   | 400/500         | Eyebrows, section indices, labels, micro-text  |
 
 Italic is meaningful — used for emphasis on a single phrase per heading, often colored with `var(--accent)`. Do not italicize whole headings.
 
@@ -109,21 +109,30 @@ Set up in `lib/fonts.ts`:
 import { Instrument_Serif, Geist, JetBrains_Mono } from "next/font/google";
 
 export const display = Instrument_Serif({
-  weight: ["400"],
-  style: ["normal", "italic"],
-  subsets: ["latin"],
-  variable: "--font-display",
+    weight: ["400"],
+    style: ["normal", "italic"],
+    subsets: ["latin"],
+    variable: "--font-display",
 });
 export const body = Geist({ subsets: ["latin"], variable: "--font-body" });
-export const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
+export const mono = JetBrains_Mono({
+    subsets: ["latin"],
+    variable: "--font-mono",
+});
 ```
 
 In `globals.css`:
 
 ```css
-.font-display { font-family: var(--font-display), serif; }
-.font-body    { font-family: var(--font-body), system-ui, sans-serif; }
-.font-mono    { font-family: var(--font-mono), monospace; }
+.font-display {
+    font-family: var(--font-display), serif;
+}
+.font-body {
+    font-family: var(--font-body), system-ui, sans-serif;
+}
+.font-mono {
+    font-family: var(--font-mono), monospace;
+}
 ```
 
 ## Layout conventions
@@ -155,14 +164,19 @@ Source of truth: `lib/data/members.ts`. Shape:
 
 ```ts
 export type Member = {
-  slug: string;          // url-safe, e.g. "brhane-giday"
-  index: string;         // "01" through "06"
-  name: string;
-  tags: string[];        // 3–5 short capabilities
-  bioShort: string;      // 1–2 sentences for the card
-  bioLong: string;       // paragraph(s) for the individual page
-  place: string;         // "Kigali · Axum"
-  links?: { linkedin?: string; github?: string; site?: string; email?: string };
+    slug: string; // url-safe, e.g. "brhane-giday"
+    index: string; // "01" through "06"
+    name: string;
+    tags: string[]; // 3–5 short capabilities
+    bioShort: string; // 1–2 sentences for the card
+    bioLong: string; // paragraph(s) for the individual page
+    place: string; // "Kigali · Axum"
+    links?: {
+        linkedin?: string;
+        github?: string;
+        site?: string;
+        email?: string;
+    };
 };
 ```
 
@@ -181,13 +195,13 @@ Order in the file is the order on the site. Don't sort alphabetically.
 
 ## Voice & copy
 
-Short sentences. Concrete nouns. Specific over general. Confident without hyperbole. When you write copy, the test is: would this sentence appear in *The New Yorker* or in a Series A pitch deck? Aim for the former.
+Short sentences. Concrete nouns. Specific over general. Confident without hyperbole. When you write copy, the test is: would this sentence appear in _The New Yorker_ or in a Series A pitch deck? Aim for the former.
 
 ## Pull request / commit conventions
 
 - Conventional commits: `feat:`, `fix:`, `refactor:`, `chore:`, `docs:`, `style:`.
 - One concern per commit.
-- PR descriptions explain *why*, not *what*. The diff already shows what.
+- PR descriptions explain _why_, not _what_. The diff already shows what.
 - Before merging: `pnpm lint && pnpm typecheck && pnpm build` must pass.
 
 ## When in doubt
